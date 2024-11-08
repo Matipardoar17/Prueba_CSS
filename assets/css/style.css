@@ -1,0 +1,217 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+body{
+  display: grid;
+  grid-template-areas: 'header''aside''main''footer';
+  grid-template-rows: 150px 100px calc(100vh - 370px) 120px ;
+  font-family: 'barlow-condensed', sans-serif;
+}
+
+header{
+  grid-area: header;
+  background-color: #040464;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+#header_logo img{
+  height: 120px;
+  width: 130px;
+  margin: 0px 113px;
+  animation: rotación 0.8s cubic-bezier(0.175, 0.885, 0.320, 1.275) infinite both;
+}
+#nombre_tienda{
+  display: none;
+}
+.iconos_header{
+  display: none;
+}
+#barras{
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  padding: 0px 10px;
+}
+.fa-bars{
+  align-items: center;
+  padding: 0px 15px;
+}
+
+main{
+  grid-area: main;
+  background-color: #fafafa;
+  overflow-y: scroll;
+}
+.productos{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 70px;
+  padding: 50px;
+  margin: 50px;
+}
+.card{
+  border-radius: 20px;
+  height: 550px ;
+  width: 350px;
+  background-color: #fff;
+  box-shadow: 0 0 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out;
+}
+.card:hover{
+  transform: scale(1.2)
+}
+
+ .productos img{
+  height: 400px;
+  width: 350px;
+  border-radius: 20px;
+ }
+ button{
+  padding: 15px;
+  border-radius: 9px;
+  border: none;
+  margin: 15px;
+  background-color: #040464;
+  color: #fff;
+ } 
+ button:hover{
+  background-color: rgb(43, 55, 224);
+  cursor: pointer;
+}
+aside {
+  grid-area: aside;
+  background-color: #040464;
+  color: #fff;
+  display: flex;
+}
+.aside h2 {
+  display: none;
+}
+.aside h3{
+  display: none;
+}
+.logos h3{
+  display: none;
+}
+.logos img{
+  height: 50px;
+  width: 60px;
+  padding: 7px;
+  margin: 20px;
+  filter: drop-shadow(0px 0px 3px #fff);
+}
+footer{
+  grid-area: footer;
+  background-color: #040464;
+  text-align: center;
+  color: #fff;
+  padding: 30px;
+}
+.redes{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.fa-brands{
+  width: 70px;
+  color: #fff;
+}
+.footer p{
+  padding: 15px;
+}
+  
+
+@media (width >= 950px) {
+
+  body{
+    grid-template-areas: 'header header''aside main''footer footer';
+  grid-template-rows: 170px calc(100vh - 170px) ;
+  grid-template-columns: 170px calc(100vw - 170px)170px;
+  }
+  header{
+    display: flex;
+    justify-content: space-around;
+  }
+  .iconos_header{
+    color: #fff;
+    display: block;
+    gap: 70px;
+  }
+  #barras{
+    display: none;
+  }
+  #nombre_tienda{
+    display: block;
+    height: 200px;
+  }
+  aside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .logos img{
+    height: 70px;
+    width: 90px;
+    padding: 7px;
+    margin: 20px;
+    filter: drop-shadow(0px 0px 3px #fff);
+  }
+  #catalogo{
+    display: block;
+    padding: 20px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  #marcas{
+    display: block;
+    padding: 15px;
+  }
+  .logos img{
+    height: 70px;
+    width: 110px;
+    padding: 10px;
+    margin: 20px;
+    filter: drop-shadow(0px 0px 3px #fff);
+  }
+  section{
+    display: flex;
+  }
+}
+ 
+@keyframes rotación {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 100%;
+  }
+  10% {
+    transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: rotate(4deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  90% {
+    transform: rotate(2deg);
+  }
+}
